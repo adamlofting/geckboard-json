@@ -1,6 +1,6 @@
 {
   "name": "geckoboard-json",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A module to format data as JSON required for geckoboard",
   "main": "geckoboard-json.js",
   "scripts": {

@@ -79,7 +79,7 @@ function funnel (arr, valueFieldName, labelFieldName) {
  * @param  {Array} arr, Array of objects
  * @param  {String} valueFieldName, Name of the object field to plot
  * @param  {String} labelFieldName, Name of the object field to use as the x-axis label
- * @param  {[type]} options (.color as hexcode color)
+ * @param  {[type]} options (.color as hexcode color, .usingDate:true will shorted dates to 'MM-DD')
  * @return {JSON} Formatted as per: https://developer.geckoboard.com/#line-chart
  */
 function lineChart (array, valueFieldName, labelFieldName, options) {
@@ -107,6 +107,15 @@ function lineChart (array, valueFieldName, labelFieldName, options) {
     axisx.push(arr[i][labelFieldName]);
   }
 
+  if (options && options.usingDates) {
+    for (var j = 0; j < axisx.length; j++) {
+      var d = new Date(axisx[j]);
+      var mm = (d.getMonth()+1).toString(); // getMonth() is zero-based
+      var dd  = d.getDate().toString();
+      axisx[j] =  (mm[1]?mm:"0"+mm[0]) + '-' + (dd[1]?dd:"0"+dd[0]); // padding
+    }
+  }
+
   settings.axisx = axisx;
   settings.axisy = axisy;
   geckoboardJSON.item = item;
@@ -117,6 +126,7 @@ function lineChart (array, valueFieldName, labelFieldName, options) {
 
 module.exports = {
   numberAndSecondaryStat: numberAndSecondaryStat,
-  funnel: funnel
+  funnel: funnel,
+  lineChart: lineChart
 };
 
