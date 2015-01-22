@@ -1,4 +1,4 @@
-# mocofoteamlist
+# geckoboard-json
 
 `npm install geckoboard-json`
 
