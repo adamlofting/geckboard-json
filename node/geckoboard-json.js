@@ -82,7 +82,7 @@ function funnel (arr, valueFieldName, labelFieldName) {
  * @param  {[type]} options (.color as hexcode color, .usingDate:true will shorted dates to 'MM-DD')
  * @return {JSON} Formatted as per: https://developer.geckoboard.com/#line-chart
  */
-function lineChart (array, valueFieldName, labelFieldName, options) {
+function lineChart (arr, valueFieldName, labelFieldName, options) {
   // geckboard funnel holds a maximum of 8 items
   if (arr.length > 120) {
     arr = arr.slice(0,120);
