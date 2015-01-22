@@ -1,0 +1,21 @@
+{
+  "name": "geckoboard-json",
+  "version": "0.0.1",
+  "description": "A module to format data as JSON required for geckoboard",
+  "main": "geckoboard-json.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adamlofting/geckoboard-json"
+  },
+  "author": "Adam Lofting",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/adamlofting/geckoboard-json/issues"
+  },
+  "homepage": "https://github.com/adamlofting/geckoboard-json",
+  "dependencies": {
+  }
+}
