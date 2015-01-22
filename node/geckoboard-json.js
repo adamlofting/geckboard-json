@@ -88,19 +88,18 @@ function lineChart (arr, valueFieldName, labelFieldName, options) {
     arr = arr.slice(0,120);
   }
 
-  var color = "#ff00aa";
-  if (options) {
-    if (options.color) {
-      color = options.color;
-    }
-  }
-
   var geckoboardJSON = {};
   var item = []; // this stores the values
   var settings = {};
-  settings.color = color;
   var axisx = [];
   var axisy = [];
+
+  if (options) {
+    if (options.color) {
+      color = options.color;
+      settings.color = color;
+    }
+  }
 
   for (var i = 0; i < arr.length; i++) {
     item.push(arr[i][valueFieldName]);
