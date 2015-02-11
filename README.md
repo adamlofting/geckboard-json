@@ -11,5 +11,7 @@ Format your API JSON to match the requirements for geckoboard to read it.
 On update:
 ```
 $ cd node/
+$ mversion patch
+$ git commit ...
 $ npm publish
 ```

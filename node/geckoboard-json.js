@@ -83,7 +83,6 @@ function funnel (arr, valueFieldName, labelFieldName) {
  * @return {JSON} Formatted as per: https://developer.geckoboard.com/#line-chart
  */
 function lineChart (arr, valueFieldName, labelFieldName, options) {
-  // geckboard funnel holds a maximum of 8 items
   if (arr.length > 120) {
     arr = arr.slice(0,120);
   }
@@ -114,6 +113,20 @@ function lineChart (arr, valueFieldName, labelFieldName, options) {
       axisx[j] =  (mm[1]?mm:"0"+mm[0]) + '-' + (dd[1]?dd:"0"+dd[0]); // padding
     }
   }
+
+  var lowest;
+  var highest;
+
+  for (var i = 0; i < item.length; i++) {
+    var thisItem = item[i];
+    if (!lowest || (thisItem < lowest)) {
+      lowest = thisItem;
+    }
+    if (!highest || (thisItem > highest)) {
+      highest = thisItem;
+    }
+  }
+  axisy = [lowest, highest];
 
   settings.axisx = axisx;
   settings.axisy = axisy;
