@@ -126,6 +126,10 @@ function lineChart (arr, valueFieldName, labelFieldName, options) {
       highest = thisItem;
     }
   }
+
+  lowest = Math.round(lowest * 100) / 100;
+  highest = Math.round(highest * 100) / 100;
+
   axisy = [lowest, highest];
 
   settings.axisx = axisx;
