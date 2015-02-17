@@ -46,34 +46,6 @@ function funnel (arr, valueFieldName, labelFieldName) {
 }
 
 /**
- * Creates suitable JSON for Geckoboard's Funnel widget
- * https://developer.geckoboard.com/#funnel
- * @param  {Array} arr, Array of objects
- * @param  {String} valueFieldName, Name of the object field to use as the value
- * @param  {String} labelFieldName, Name of the object field to use as the label
- * @return {JSON} Formatted as per: https://developer.geckoboard.com/#funnel
- */
-function funnel (arr, valueFieldName, labelFieldName) {
-  // geckboard funnel holds a maximum of 8 items
-  if (arr.length > 8) {
-    arr = arr.slice(0,8);
-  }
-
-  var steps = [];
-  for (var i = 0; i < arr.length; i++) {
-    var step = {
-      "value": arr[i][valueFieldName],
-      "label": arr[i][labelFieldName]
-    };
-    steps.push(step);
-  }
-  var output = {
-    "item": steps
-  };
-  return output;
-}
-
-/**
  * Creates suitable JSON for Geckoboard's Line Chart widget
  * https://developer.geckoboard.com/#line-chart
  * @param  {Array} arr, Array of objects
