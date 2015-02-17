@@ -31,4 +31,10 @@ var dummyData = [
   }
 ];
 
+console.log('TESTING lineChart()');
 console.log(geckoboardJSON.lineChart(dummyData, 'value', 'date', {usingDates: true}));
+
+console.log('');
+console.log('TESTING highChartLineChart()');
+console.log(geckoboardJSON.highChartLineChart(dummyData, 'value', 'date', {usingDates: true}));
+
